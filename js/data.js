@@ -13,7 +13,7 @@
 window.CLASS_DATA = {
   /* ---------- 学校信息（已按真实信息填好，可改） ---------- */
   school: {
-    name: { zh: "南京金地未来学校", en: "Nanjing Jindi Future School" },
+    name: { zh: "南京金地未来学校", en: "Royal Grammar School Guildford Nanjing" },
     motto: { zh: "正直 · 包容 · 健康 · 坚毅 · 进取", en: "Integrity · Inclusiveness · Health · Perseverance · Enterprise" },
     address: { zh: "南京市江北新区浦口区康健路17号", en: "No.17 Kangjian Road, Jiangbei New Area, Nanjing" },
   },
@@ -24,7 +24,7 @@ window.CLASS_DATA = {
     slogan: { zh: "", en: "" }, // 班级口号，如 {zh:"乘风破浪，未来可期", en:"Ride the waves, embrace the future"}
     homeroomTeacher: { zh: "", en: "" }, // 班主任姓名，如 {zh:"王老师", en:"Ms. Wang"}
     termStart: "2026-09-01", // 学年开始日期（首页"学年周"计算用），按实际修改
-    photo: "assets/class-photo.svg", // 现在是占位图；拿到真实合照后改成你的文件名，如 "assets/class-photo.jpg"
+    photo: "assets/class-photo.jpg", // 班级合照（首页英雄区）
     headTeacherMessage: { zh: "", en: "" }, // 班主任寄语，可多句
     rules: [
       // 班规，每行一条，如 "上课认真听讲，积极发言",
@@ -71,24 +71,63 @@ window.CLASS_DATA = {
   ],
   lunchAfter: 5, // 午休放在第 5 节课之后
 
-  /* ---------- 课程表（待填） ----------
-     周一到周五，每天一个数组，按节次顺序排列。
-     subject 填上面 subjects 的英文键名（如 "math"）。
-     某节没课就写 null。
-     格式示例（填好后删掉注释）：
-     mon: [
-       { subject: "math", teacher: {zh:"王老师", en:"Ms. Wang"}, room: "A203" },
-       { subject: "english", teacher: {zh:"Smith老师", en:"Mr. Smith"}, room: "A205" },
-       null,
-       ...
-     ],
+  /* ---------- 课程表 ----------
+     ⚠️ 当前是虚拟示例课表（老师统一写"示例老师"，教室为通用编号），仅用于预览页面效果。
+     拿到班级真实课表后整体替换：周一到周五每天一个数组，按节次顺序排列；
+     subject 填上面 subjects 的英文键名，某节没课就写 null。
+     每节课的时间在 periods 里（左侧时间列自动显示）。
   */
   timetable: {
-    mon: [],
-    tue: [],
-    wed: [],
-    thu: [],
-    fri: [],
+    mon: [
+      { subject: "chinese", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A201" },
+      { subject: "math", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A202" },
+      { subject: "english", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A203" },
+      { subject: "physics", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "物理实验室 B101" },
+      { subject: "history", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A204" },
+      { subject: "pe", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "体育馆" },
+      { subject: "cs", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "机房 C201" },
+      null,
+    ],
+    tue: [
+      { subject: "english", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A203" },
+      { subject: "math", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A202" },
+      { subject: "chinese", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A201" },
+      { subject: "chemistry", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "化学实验室 B102" },
+      { subject: "biology", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "生物实验室 B103" },
+      { subject: "geography", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A205" },
+      { subject: "art", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "美术教室 C301" },
+      null,
+    ],
+    wed: [
+      { subject: "math", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A202" },
+      { subject: "english", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A203" },
+      { subject: "physics", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "物理实验室 B101" },
+      { subject: "chinese", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A201" },
+      { subject: "cs", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "机房 C201" },
+      { subject: "economics", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A206" },
+      { subject: "music", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "音乐教室 C302" },
+      null,
+    ],
+    thu: [
+      { subject: "chinese", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A201" },
+      { subject: "chemistry", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "化学实验室 B102" },
+      { subject: "math", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A202" },
+      { subject: "english", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A203" },
+      { subject: "biology", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "生物实验室 B103" },
+      { subject: "dt", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "创客工坊 C303" },
+      { subject: "pe", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "体育馆" },
+      null,
+    ],
+    fri: [
+      { subject: "english", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A203" },
+      { subject: "math", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A202" },
+      { subject: "chinese", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A201" },
+      { subject: "physics", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "物理实验室 B101" },
+      { subject: "economics", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A206" },
+      { subject: "geography", teacher: { zh: "示例老师", en: "Sample Teacher" }, room: "A205" },
+      null,
+      null,
+    ],
   },
 
   /* ---------- 教师名单（待填） ----------
@@ -147,9 +186,14 @@ window.CLASS_DATA = {
      tag 三选一："urgent"（紧急）/ "important"（重要）/ "normal"（通知） */
   announcements: [],
 
-  /* ---------- 班级荣誉（待填） ----------
-     格式示例：{ name: {zh:"英文拼写大赛 冠军", en:"Spelling Bee Champion"}, date: "2026-05", emoji: "🏆" } */
-  honors: [],
+  /* ---------- 班级角（原荣誉墙，现为班级角照片墙） ----------
+     新增照片：放进 assets/班级角/ 后在下面加一行即可。 */
+  classCorner: [
+    { photo: "assets/班级角/微信图片_20260829182646_38_389.jpg", ratio: "3/2", title: { zh: "班级角 · 01", en: "Class Corner 01" } },
+    { photo: "assets/班级角/微信图片_20260829182647_39_389.jpg", ratio: "3/2", title: { zh: "班级角 · 02", en: "Class Corner 02" } },
+    { photo: "assets/班级角/微信图片_20260829182649_40_389.jpg", ratio: "3/2", title: { zh: "班级角 · 03", en: "Class Corner 03" } },
+    { photo: "assets/班级角/微信图片_20260829182650_41_389.jpg", ratio: "3/2", title: { zh: "班级角 · 04", en: "Class Corner 04" } },
+  ],
 
   /* ---------- 活动相册（待填） ----------
      cover 填下方 PRESET_COVERS 的键名（如 "navy"），或直接写 CSS 渐变字符串。
@@ -160,18 +204,24 @@ window.CLASS_DATA = {
        title: {zh:"开学第一天", en:"First Day of School"},
        date: "2026-09-01", tag: "开学", people: "全体同学" } */
   gallery: [
-    // 以下 6 张是占位图（assets/gallery-01.svg ~ 06.svg）。拿到真实照片后：
-    // 1) 把照片放进 assets/；2) 把 photo 改成你的文件名（如 "assets/gallery-01.jpg"）；3) 补上 date / tag / people。
-    { photo: "assets/gallery-01.svg", ratio: "4/3", title: { zh: "照片待替换 · 01", en: "Placeholder 01" }, date: "", tag: "", people: "" },
-    { photo: "assets/gallery-02.svg", ratio: "3/4", title: { zh: "照片待替换 · 02", en: "Placeholder 02" }, date: "", tag: "", people: "" },
-    { photo: "assets/gallery-03.svg", ratio: "1/1", title: { zh: "照片待替换 · 03", en: "Placeholder 03" }, date: "", tag: "", people: "" },
-    { photo: "assets/gallery-04.svg", ratio: "4/3", title: { zh: "照片待替换 · 04", en: "Placeholder 04" }, date: "", tag: "", people: "" },
-    { photo: "assets/gallery-05.svg", ratio: "3/4", title: { zh: "照片待替换 · 05", en: "Placeholder 05" }, date: "", tag: "", people: "" },
-    { photo: "assets/gallery-06.svg", ratio: "1/1", title: { zh: "照片待替换 · 06", en: "Placeholder 06" }, date: "", tag: "", people: "" },
+    // 真实照片：新生周活动（assets/新生周活动照片/）。日期 / 参与人待班级补充，标题可自行改。
+    { photo: "assets/新生周活动照片/照片1.jpg", ratio: "3/2", title: { zh: "新生周活动 · 01", en: "Orientation Week 01" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/照片2.jpg", ratio: "3/2", title: { zh: "新生周活动 · 02", en: "Orientation Week 02" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/照片3.jpg", ratio: "3/2", title: { zh: "新生周活动 · 03", en: "Orientation Week 03" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/照片4.jpg", ratio: "16/9", title: { zh: "新生周活动 · 04", en: "Orientation Week 04" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/照片5.jpg", ratio: "2/3", title: { zh: "新生周活动 · 05", en: "Orientation Week 05" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182651_42_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 06", en: "Orientation Week 06" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182653_43_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 07", en: "Orientation Week 07" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182654_44_389.jpg", ratio: "2/3", title: { zh: "新生周活动 · 08", en: "Orientation Week 08" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182656_45_389.jpg", ratio: "2/3", title: { zh: "新生周活动 · 09", en: "Orientation Week 09" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182657_46_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 10", en: "Orientation Week 10" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/微信图片_20260829182658_47_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 11", en: "Orientation Week 11" }, date: "", tag: "新生周活动", people: "" },
+    // 新增照片：把照片放进 assets/ 后在下面加一行即可（photo 填路径，title 填标题，tag 填分类）。
   ],
 
   /* ---------- 相册标签（活动分类，可增删） ---------- */
   tags: {
+    "新生周活动": { zh: "新生周活动", en: "Orientation Week" },
     "开学": { zh: "开学", en: "Term Start" },
     "运动会": { zh: "运动会", en: "Sports Day" },
     "班会": { zh: "班会", en: "Class Meeting" },

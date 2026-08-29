@@ -105,8 +105,11 @@ h1, h2, h3, h4, p { margin: 0; }
   padding-inline: clamp(20px, 4vw, 36px);
 }
 
-/* 页面进入动画 */
-.page-enter { animation: pageIn 0.6s var(--ease-out) both; }
+/* 页面进入动画：挂在 header/main/footer 上，不能挂在 body ——
+   body 上的 transform 动画会让 position:fixed（弹窗/抽屉/灯箱）以整页为参照，跟着滚动条跑 */
+.page-enter > header,
+.page-enter > main,
+.page-enter > footer { animation: pageIn 0.6s var(--ease-out) both; }
 @keyframes pageIn {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: none; }
@@ -811,7 +814,7 @@ h1, h2, h3, h4, p { margin: 0; }
 .quick-card h3 { font-size: 1.08rem; }
 .quick-card p { font-size: 0.86rem; color: var(--ink-2); }
 
-/* ---------- 11. 荣誉墙 Honors ---------- */
+/* ---------- 11. 班级角 Class Corner ---------- */
 .honor-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1087,6 +1090,8 @@ h1, h2, h3, h4, p { margin: 0; }
   cursor: zoom-in;
   position: relative;
 }
+/* Chrome 对多列瀑布流里的 hover 位移有渲染 bug（照片会闪/消失），相册卡不做位移，保留阴影+金边反馈 */
+.photo-card:hover { transform: none; }
 
 .photo-cover {
   width: 100%;
@@ -1103,19 +1108,8 @@ h1, h2, h3, h4, p { margin: 0; }
   background: url("../assets/weibiaoti-12222.png") center / 34% no-repeat;
   opacity: 0.06;
 }
-.photo-cover .zoom-hint {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background: rgba(0, 33, 25, 0);
-  color: #fff;
-  font-size: 1.6rem;
-  opacity: 0;
-  transition: all 0.3s var(--ease-out);
-}
-.photo-card:hover .zoom-hint { opacity: 1; background: rgba(0, 33, 25, 0.5); }
-
+/* 真实照片不盖水印 */
+.photo-cover.has-photo::after { display: none; }
 .photo-info { padding: 15px 18px; }
 .photo-info h3 { font-size: 0.98rem; margin-bottom: 3px; }
 .photo-info .p-date { font-size: 0.76rem; color: var(--ink-3); letter-spacing: 0.06em; }
@@ -1178,6 +1172,8 @@ h1, h2, h3, h4, p { margin: 0; }
   background: url("../assets/weibiaoti-12222.png") center / 30% no-repeat;
   opacity: 0.05;
 }
+/* 真实照片不盖水印 */
+.lb-frame.has-photo::after { display: none; }
 
 .lb-nav {
   position: absolute;
@@ -1353,6 +1349,7 @@ h1, h2, h3, h4, p { margin: 0; }
   .today-grid { grid-template-columns: 1fr; }
   .quick-grid { grid-template-columns: 1fr 1fr; }
   .masonry { columns: 1; }
+  .honor-grid { grid-template-columns: repeat(2, 1fr); }
   .detail-grid { grid-template-columns: 1fr; }
   .news-item { padding: 16px; gap: 12px; }
   .hero { background: linear-gradient(180deg, var(--navy-900), var(--navy-800)); }

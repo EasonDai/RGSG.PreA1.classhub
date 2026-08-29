@@ -41,9 +41,9 @@
       "sec.quick.eyebrow": "Quick Access",
       "sec.quick.title": "快速入口",
       "sec.quick.sub": "常用板块一键直达。",
-      "sec.honor.eyebrow": "Wall of Honour",
-      "sec.honor.title": "荣誉墙",
-      "sec.honor.sub": "每一份荣誉，都是全班共同的骄傲。",
+      "sec.honor.eyebrow": "Class Corner",
+      "sec.honor.title": "班级角",
+      "sec.honor.sub": "教室里属于我们的那一角，收藏着日常的点滴。",
 
       /* 今日一览卡片 */
       "today.classes": "今日课程",
@@ -85,11 +85,11 @@
       "quick.members.d": "认识每一位同学与老师，还有我们的书院",
       "quick.gallery.t": "活动相册",
       "quick.gallery.d": "我们的高光时刻，都在这里珍藏",
-      "quick.about.t": "关于 Pre A1",
-      "quick.about.d": "班级口号、班规与班主任寄语",
+      "quick.about.t": "班级角",
+      "quick.about.d": "教室一角，记录我们的日常",
 
-      /* 荣誉墙 */
-      "honor.empty": "荣誉正在路上，等你来书写！",
+      /* 班级角 */
+      "honor.empty": "班级角的照片正在布置中…",
       "honor.date": "{date} 获得",
 
       /* 课程表页 */
@@ -174,7 +174,7 @@
       "nav.close": "Close menu",
 
       /* Hero */
-      "hero.crest": "NANJING JINDI FUTURE SCHOOL · INTERNATIONAL HIGH SCHOOL",
+      "hero.crest": "ROYAL GRAMMAR SCHOOL GUILDFORD NANJING · INTERNATIONAL HIGH SCHOOL",
       "hero.tagline": "Welcome to the digital home of Pre A1 — where every day of ours comes to life.",
       "hero.cta.timetable": "View Timetable",
       "hero.cta.members": "Meet the Class",
@@ -197,9 +197,9 @@
       "sec.quick.eyebrow": "Quick Access",
       "sec.quick.title": "Quick Access",
       "sec.quick.sub": "Jump straight to what you need.",
-      "sec.honor.eyebrow": "Wall of Honour",
-      "sec.honor.title": "Wall of Honour",
-      "sec.honor.sub": "Every honour is a pride shared by the whole class.",
+      "sec.honor.eyebrow": "Class Corner",
+      "sec.honor.title": "Class Corner",
+      "sec.honor.sub": "Our little corner of the classroom, keeping the everyday moments.",
 
       /* Today cards */
       "today.classes": "Today's Classes",
@@ -241,11 +241,11 @@
       "quick.members.d": "Meet everyone, and our four Houses",
       "quick.gallery.t": "Gallery",
       "quick.gallery.d": "Our highlights, treasured here",
-      "quick.about.t": "About Pre A1",
-      "quick.about.d": "Slogan, class rules and the homeroom message",
+      "quick.about.t": "Class Corner",
+      "quick.about.d": "A corner of our classroom, recording our daily life",
 
       /* Honours */
-      "honor.empty": "Honours are on their way — written by you!",
+      "honor.empty": "Class Corner photos are on their way!",
       "honor.date": "Awarded {date}",
 
       /* Timetable */
@@ -309,11 +309,11 @@
       "footer.about.desc": "A digital home crafted by the students of Pre A1, recording every day of our growth together.",
       "footer.col.pages": "Pages",
       "footer.col.class": "Class Info",
-      "footer.col.class.school": "Nanjing Jindi Future School",
+      "footer.col.class.school": "Royal Grammar School Guildford Nanjing",
       "footer.col.class.grade": "International High School · Pre A1",
       "footer.col.class.houses": "Houses: Austen / Beckingham / Hamonde / Valpy",
       "footer.built": "Made with ❤ · Designed & Built by Pre A1",
-      "footer.rights": "© {year} Pre A1, Nanjing Jindi Future School · For class use only",
+      "footer.rights": "© {year} Pre A1, Royal Grammar School Guildford Nanjing · For class use only",
       "footer.motto": "Integrity · Inclusiveness · Health · Perseverance · Enterprise",
 
       /* Theme & language */

@@ -27,7 +27,7 @@
     const img = p.photo
       ? '<img src="' + PA1.esc(p.photo) + '" alt="" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">'
       : "";
-    return emoji + img + (big ? "" : '<span class="zoom-hint" aria-hidden="true">🔍</span>');
+    return emoji + img;
   }
 
   function filtered() {
@@ -101,13 +101,11 @@
         const tagLabel = tags[p.tag] ? PA1.pick(tags[p.tag]) : p.tag;
         return (
           '<div class="card photo-card" data-i="' + i + '" tabindex="0" role="button">' +
-          '<div class="photo-cover" style="aspect-ratio:' + ratio + ';--cover:' + coverStyle(p) + '">' +
+          '<div class="photo-cover' + (p.photo ? " has-photo" : "") + '" style="aspect-ratio:' + ratio + ';--cover:' + coverStyle(p) + '">' +
           coverHTML(p, false) +
           "</div>" +
           '<div class="photo-info"><h3>' + PA1.esc(PA1.pick(p.title)) + "</h3>" +
-          (p.date
-            ? '<span class="p-date">' + PA1.esc(PA1.fmtDateFull(p.date)) + "</span>"
-            : '<div style="margin-top:6px"><span class="chip chip-normal">⏳ ' + PA1.esc(t("common.dataPending")) + "</span></div>") +
+          (p.date ? '<span class="p-date">' + PA1.esc(PA1.fmtDateFull(p.date)) + "</span>" : "") +
           (p.people
             ? '<div style="font-size:.78rem;color:var(--ink-2);margin-top:4px">👥 ' +
               PA1.esc(t("gl.people", { people: PA1.pick(p.people) })) + "</div>"
@@ -156,14 +154,18 @@
     const p = items[lbIdx];
     if (!p) return;
     frame.style.setProperty("--cover", coverStyle(p));
+    frame.classList.toggle("has-photo", !!p.photo);
     frame.innerHTML = coverHTML(p, true);
     lbTitle.textContent = PA1.pick(p.title);
     const tags = D().tags || {};
     const tagLabel = tags[p.tag] ? PA1.pick(tags[p.tag]) : "";
-    lbMeta.textContent =
-      PA1.fmtDateFull(p.date) +
-      (p.people ? " · " + t("gl.people", { people: PA1.pick(p.people) }) : "") +
-      (tagLabel ? " · " + tagLabel : "");
+    lbMeta.textContent = [
+      PA1.fmtDateFull(p.date),
+      p.people ? t("gl.people", { people: PA1.pick(p.people) }) : "",
+      tagLabel,
+    ]
+      .filter(Boolean)
+      .join(" · ");
     lbCount.textContent = t("gl.lightbox.of", { n: lbIdx + 1, total: items.length });
   }
 

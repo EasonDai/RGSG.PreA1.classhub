@@ -1,6 +1,6 @@
 /* ==========================================================================
    Pre A1 · Class Hub — 首页逻辑
-   校训 / 班级速览 / 今日一览 / 倒计时翻牌 / 快讯 / 荣誉墙 / 生日撒花
+   校训 / 班级速览 / 今日一览 / 倒计时翻牌 / 快讯 / 班级角 / 生日撒花
    ========================================================================== */
 (function () {
   "use strict";
@@ -400,23 +400,30 @@
     });
   }
 
-  /* ================= 7. 荣誉墙 ================= */
-  function renderHonors() {
+  /* ================= 7. 班级角 ================= */
+  function renderClassCorner() {
     const grid = $("#honor-grid");
-    const honors = D().honors || [];
-    if (!honors.length) {
+    const items = D().classCorner || [];
+    if (!items.length) {
       grid.innerHTML =
-        '<div class="card honor-card"><div class="honor-medal" aria-hidden="true">🌟</div><h3>' +
+        '<div class="card honor-card"><div class="honor-medal" aria-hidden="true">📸</div><h3>' +
         PA1.esc(t("honor.empty")) + "</h3></div>";
       return;
     }
-    grid.innerHTML = honors
+    grid.innerHTML = items
       .map(
-        (h) =>
-          '<div class="card honor-card">' +
-          '<div class="honor-medal" aria-hidden="true">' + (h.emoji || "🏅") + "</div>" +
-          "<h3>" + PA1.esc(PA1.pick(h.name)) + "</h3>" +
-          "<p>" + PA1.esc(t("honor.date", { date: PA1.fmtDate(h.date) })) + "</p></div>"
+        (p) =>
+          '<div class="card photo-card">' +
+          '<div class="photo-cover has-photo" style="aspect-ratio:' + (p.ratio || "3/2") + '">' +
+          '<span class="emoji">📷</span>' +
+          (p.photo
+            ? '<img src="' + PA1.esc(p.photo) + '" alt="" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">'
+            : "") +
+          "</div>" +
+          (p.title
+            ? '<div class="photo-info"><h3>' + PA1.esc(PA1.pick(p.title)) + "</h3></div>"
+            : "") +
+          "</div>"
       )
       .join("");
   }
@@ -437,7 +444,7 @@
     renderDeadlines();
     renderCountdown();
     renderNews();
-    renderHonors();
+    renderClassCorner();
   }
 
   document.addEventListener("DOMContentLoaded", () => {

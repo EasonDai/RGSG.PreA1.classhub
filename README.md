@@ -27,9 +27,9 @@ python3 -m http.server 8000
 
 | 用途 | 推荐文件名 | 现在挂的占位图 |
 |---|---|---|
-| 班级合照（首页） | `class-photo.jpg` | `assets/class-photo.svg` |
+| 班级合照（首页） | ✅ 已接入 `class-photo.jpg` | —（占位图已替换） |
 | 校徽 / 校标（页脚 · 浏览器标签页图标） | ✅ 已接入 `weibiaoti-12222.png` | —（占位图已替换） |
-| 相册照片 × 6 | `gallery-01.jpg` ~ `gallery-06.jpg` | `assets/gallery-01.svg` ~ `06.svg` |
+| 相册照片（新生周活动） | ✅ 已接入 `assets/新生周活动照片/照片1~5.jpg` | —（占位图已删除） |
 
 真实照片保留任意文件名也可以（如微信保存的 `IMG_1234.JPG`），发给我们文件名即可接上。
 
@@ -44,14 +44,14 @@ python3 -m http.server 8000
 | 值日表 | `duty` | 周一到周五值日名单 |
 | 倒计时大日子 | `events` | 名称 + 日期 + emoji |
 | 班级公告 | `announcements` | 标题 + 日期 + 内容 + 紧急程度 |
-| 荣誉墙 | `honors` | 奖项 + 时间 + emoji |
+| 班级角 | `classCorner` | 照片 + 标题（放 `assets/班级角/`） |
 | 相册 | `gallery` + `tags` | 照片/占位图标 + 标题 + 日期 + 活动标签 |
 | 作业截止 | `deadlines` | 用于首页"作业截止"卡片 |
 
 ## 📁 项目结构
 
 ```
-├── index.html          首页（今日一览 / 倒计时 / 快讯 / 荣誉墙）
+├── index.html          首页（今日一览 / 倒计时 / 快讯 / 班级角）
 ├── timetable.html      课程表（点击课程看详情）
 ├── members.html        班级成员（书院筛选 / 档案弹窗）
 ├── gallery.html        活动相册（时间线 / 灯箱）
