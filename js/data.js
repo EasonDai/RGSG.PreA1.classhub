@@ -210,12 +210,12 @@ window.CLASS_DATA = {
     { photo: "assets/新生周活动照片/照片3.jpg", ratio: "3/2", title: { zh: "新生周活动 · 03", en: "Orientation Week 03" }, date: "", tag: "新生周活动", people: "" },
     { photo: "assets/新生周活动照片/照片4.jpg", ratio: "16/9", title: { zh: "新生周活动 · 04", en: "Orientation Week 04" }, date: "", tag: "新生周活动", people: "" },
     { photo: "assets/新生周活动照片/照片5.jpg", ratio: "2/3", title: { zh: "新生周活动 · 05", en: "Orientation Week 05" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182651_42_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 06", en: "Orientation Week 06" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182653_43_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 07", en: "Orientation Week 07" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182654_44_389.jpg", ratio: "2/3", title: { zh: "新生周活动 · 08", en: "Orientation Week 08" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182656_45_389.jpg", ratio: "2/3", title: { zh: "新生周活动 · 09", en: "Orientation Week 09" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182657_46_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 10", en: "Orientation Week 10" }, date: "", tag: "新生周活动", people: "" },
-    { photo: "assets/新生周活动照片/微信图片_20260829182658_47_389.jpg", ratio: "3/2", title: { zh: "新生周活动 · 11", en: "Orientation Week 11" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/6.jpg", ratio: "3/2", title: { zh: "新生周活动 · 06", en: "Orientation Week 06" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/7.jpg", ratio: "2/3", title: { zh: "新生周活动 · 07", en: "Orientation Week 07" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/8.jpg", ratio: "3/2", title: { zh: "新生周活动 · 08", en: "Orientation Week 08" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/9.jpg", ratio: "2/3", title: { zh: "新生周活动 · 09", en: "Orientation Week 09" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/10.jpg", ratio: "3/2", title: { zh: "新生周活动 · 10", en: "Orientation Week 10" }, date: "", tag: "新生周活动", people: "" },
+    { photo: "assets/新生周活动照片/11.jpg", ratio: "3/2", title: { zh: "新生周活动 · 11", en: "Orientation Week 11" }, date: "", tag: "新生周活动", people: "" },
     // 新增照片：把照片放进 assets/ 后在下面加一行即可（photo 填路径，title 填标题，tag 填分类）。
   ],
 
